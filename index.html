@@ -12,14 +12,13 @@
     body {
       font-family: 'Roboto', sans-serif;
       margin: 0;
-      padding: 0;
+      padding: 40px 20px;
       background-color: #f8f9fa;
       color: #333;
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 40px 20px;
     }
 
     h1 {
@@ -64,36 +63,57 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
+    /* Shiny WhatsApp Button */
     .whatsapp-button {
-      background-color: #075E54;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #25D366, #075E54);
       color: white;
-      padding: 18px 35px;
-      font-size: 1.25rem;
+      padding: 18px 40px;
+      font-size: 1.3rem;
+      font-weight: 700;
       border: none;
       border-radius: 50px;
       cursor: pointer;
       text-decoration: none;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25), inset 0 -3px 0 rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
       display: inline-block;
-      font-weight: 600;
-      box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2),
-        0 4px 12px rgba(0,0,0,0.15);
-      transition: all 0.2s ease;
-      position: relative;
-      overflow: hidden;
       margin: 15px 0;
     }
 
     .whatsapp-button:hover {
-      background: linear-gradient(90deg, #075E54, #25D366);
-      transform: translateY(-2px) scale(1.03);
-      box-shadow: inset 0 -3px 0 rgba(0,0,0,0.2),
-        0 8px 20px rgba(0,0,0,0.25);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(37,211,102,0.6), 0 0 15px rgba(37,211,102,0.5) inset;
+      background: linear-gradient(135deg, #075E54, #25D366);
     }
 
     .whatsapp-button:active {
       transform: translateY(1px) scale(0.97);
-      box-shadow: inset 0 -2px 0 rgba(0,0,0,0.3),
-        0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3), inset 0 -2px 0 rgba(0,0,0,0.3);
+    }
+
+    /* Glossy floating shine effect */
+    .whatsapp-button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -75%;
+      width: 50%;
+      height: 200%;
+      background: rgba(255,255,255,0.4);
+      transform: rotate(25deg);
+      filter: blur(8px);
+    }
+
+    .whatsapp-button:hover::after {
+      animation: shine 1s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -75%; }
+      50% { left: 125%; }
+      100% { left: -75%; }
     }
 
     .timer {
