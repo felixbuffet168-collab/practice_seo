@@ -29,16 +29,18 @@
     .title-image { max-width:700px; width:100%; height:auto; border-radius:12px; margin-bottom:25px; display:block; }
     .subheader { font-size:1.1rem; margin-bottom:30px; line-height:1.5; font-weight:bold; max-width:700px; margin:0 auto; }
 
-    section.card {
-      background:#fff;
-      border-radius:12px;
-      padding:25px 20px;
-      margin:15px 0;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-      width:700px;
-      text-align:center;
-      transition:transform 0.25s ease, box-shadow 0.25s ease;
-    }
+   section.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px 20px;
+  margin: 15px auto; /* <-- centers horizontally */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 700px;   /* <-- ensures responsiveness */
+  width: 100%;        /* <-- lets it shrink on smaller screens */
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
     section.card:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
 
     .whatsapp-button {
