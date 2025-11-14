@@ -171,15 +171,20 @@
 
   <script defer>
     // Optimized countdown using requestAnimationFrame
-    const countdownElements=document.querySelectorAll('.countdown'); 
-    let totalSeconds=27*60+30; 
-    function updateCountdown(){
-      const minutes=Math.floor(totalSeconds/60); 
-      const seconds=totalSeconds%60; 
-      countdownElements.forEach(el=>{el.textContent=`${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`});
-      if(totalSeconds>0){ totalSeconds--; requestAnimationFrame(updateCountdown); }
-    }
-    requestAnimationFrame(updateCountdown);
+    const countdownElements = document.querySelectorAll('.countdown');
+let totalSeconds = 27*60 + 30;
+
+function updateCountdown() {
+  const minutes = Math.floor(totalSeconds / 60);
+  const seconds = totalSeconds % 60;
+  countdownElements.forEach(el => {
+    el.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+  });
+  if (totalSeconds > 0) totalSeconds--;
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
 
     // Event tracking
     const joinTop=document.getElementById('joinBtnTop');
