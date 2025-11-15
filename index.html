@@ -179,7 +179,6 @@
   </div>
 </header>
 
-<!-- Cards & Buttons -->
 <section class="card">
   <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" id="joinBtnTop">Join WhatsApp Group</a>
   <div class="timer">
@@ -190,14 +189,14 @@
 </section>
 
 <section class="card">
-  <h2>Why Join Our WhatsApp Group Chat?</h2>
-  <p>💼 We provide expert guidance to help you navigate the stock market with confidence.</p>
+  <h2>Why Join Our Community?</h2>
+  <p>We provide expert guidance to help you navigate the stock market with confidence.</p>
   <p>• SEBI Registered – Our platform is officially registered and regulated, ensuring credibility and trust.</p>
   <p>• Daily Stock Picks – Receive 1–2 high-potential recommendations every day.</p>
   <p>• Free Technical Insights – Gain expert analysis with no upfront fees.</p>
   <p>• Personalized Stock Reviews – Tailored guidance for your unique portfolio.</p>
   <p>• Market Trend Updates – Stay informed on market direction daily.</p>
-  <p>• No upfront charges – We only charge 0.01% per transaction.</p>
+  <p>💼 No upfront charges – We only charge 0.01% per transaction.</p>
   <p>📈 Grow your investments smartly, steadily, and safely.</p>
 </section>
 
@@ -210,14 +209,94 @@
   </div>
 </section>
 
-<!-- FAQ & Testimonials remain unchanged -->
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2>FAQ</h2>
+  <article class="faq-card">
+    <p class="faq-question">Is there any fee to join?</p>
+    <div class="faq-answer">No, joining the group is completely free! After you make a profit from your trades, only a 0.01% transaction fee will be charged. Otherwise, learning and guidance in the group is totally free.</div>
+  </article>
+  <article class="faq-card">
+    <p class="faq-question">Who can join this group?</p>
+    <div class="faq-answer">Anyone interested in learning about the Indian stock market, from beginners to experienced traders. No prior experience is required.</div>
+  </article>
+  <article class="faq-card">
+    <p class="faq-question">What will I learn in this group?</p>
+    <div class="faq-answer">You'll learn how to reduce risk in stock trading, stay updated on stock news, portfolio guidance, market trend updates and daily premium stock picks.</div>
+  </article>
+  <article class="faq-card">
+    <p class="faq-question">When does the live session start?</p>
+    <div class="faq-answer">Live session starts at 9:15 AM (IST) every Monday to Friday.</div>
+  </article>
+  <article class="faq-card">
+    <p class="faq-question">Can I ask questions in the group?</p>
+    <div class="faq-answer">Absolutely! Members are encouraged to ask questions. Our mentor Mr. Navneet Arora and group coordinator are always ready to guide you.</div>
+  </article>
+  <article class="faq-card">
+    <p class="faq-question">Must I be active everyday in the group chat?</p>
+    <div class="faq-answer">No! You can join and stay active at your available time, and you can review the conversation later.</div>
+  </article>
+</section>
+
+<!-- Testimonial Section -->
+<section class="testimonial-section">
+  <h3>What Our Members Say 💬</h3>
+
+  <article class="testimonial">
+    <div class="stars">★★★★★</div>
+    “I joined this group to learn about stock trading, and I’m amazed by the clarity of explanations. The mentors are very supportive!”
+    <div class="testimonial-author">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" class="social-logo" loading="lazy"> – Rakesh M.
+    </div>
+  </article>
+
+  <article class="testimonial">
+    <div class="stars">★★★★☆</div>
+    “The community is very helpful, and I’ve already learned so many new things about trading.”
+    <div class="testimonial-author">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-logo" loading="lazy"> – Priya S.
+    </div>
+  </article>
+
+  <article class="testimonial">
+    <div class="stars">★★★★★</div>
+    “Thanks to the team, I’ve started understanding market trends and managing my investments better. Highly recommended!”
+    <div class="testimonial-author">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-logo" loading="lazy"> – Arjun P.
+    </div>
+  </article>
+
+  <article class="testimonial">
+    <div class="stars">★★★★☆</div>
+    “I was hesitant at first, but this group made learning the stock market simple and enjoyable.”
+    <div class="testimonial-author">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-logo" loading="lazy"> – Sneha R.
+    </div>
+  </article>
+
+  <article class="testimonial">
+    <div class="stars">★★★★★</div>
+    “Daily insights and stock picks are excellent. The mentors guide you patiently through every step.”
+    <div class="testimonial-author">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" class="social-logo" loading="lazy"> – Karan D.
+    </div>
+  </article>
+
+  <article class="testimonial">
+    <div class="stars">★★★★☆</div>
+    “I love the risk management lessons and market updates. Really helpful for beginners like me.”
+    <div class="testimonial-author">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-logo" loading="lazy"> – Ananya T.
+    </div>
+  </article>
+</section>
 
 <footer class="footer">
   © 2025 India Stock Market Academy. All rights reserved.
 </footer>
 
 <script defer>
-  // Countdown
+  // Countdown timer
   const countdownElements = document.querySelectorAll('.countdown');
   let totalSeconds = 27*60 + 30;
   function updateCountdown(){
@@ -232,29 +311,35 @@
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const answer = q.nextElementSibling;
-      answer.style.maxHeight = answer.scrollHeight ? answer.scrollHeight + 'px' : '0px';
+      if(answer.style.maxHeight && answer.style.maxHeight !== '0px'){
+        answer.style.maxHeight = '0px';
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
     });
   });
 
-  // Trending ticker increment
+  // Trending ticker
   const trendingEl = document.getElementById('trending');
   let trendingNumber = 90;
   function increaseTrendingNumber() {
-    trendingNumber += Math.floor(Math.random()*3)+1;
+    trendingNumber += Math.floor(Math.random() * 3) + 1;
     trendingEl.textContent = `🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now!`;
   }
-  setTimeout(()=>{ increaseTrendingNumber(); setInterval(increaseTrendingNumber,60000); },5000);
+  setTimeout(() => {
+    increaseTrendingNumber();
+    setInterval(increaseTrendingNumber, 60000);
+  }, 5000);
 
-  // Smooth scrolling
-  let scrollPos=0;
+  // Smooth scrolling ticker
+  let scrollPos = 0;
   function smoothScroll(){
-    scrollPos -=0.55;
-    trendingEl.style.transform=`translateX(${scrollPos}px)`;
-    if(Math.abs(scrollPos)>trendingEl.scrollWidth/2){ scrollPos=0; }
+    scrollPos -= 0.55;
+    trendingEl.style.transform = `translateX(${scrollPos}px)`;
+    if(Math.abs(scrollPos) > trendingEl.scrollWidth/2){ scrollPos = 0; }
     requestAnimationFrame(smoothScroll);
   }
   smoothScroll();
 </script>
-
 </body>
 </html>
