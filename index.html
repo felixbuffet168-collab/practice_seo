@@ -50,6 +50,7 @@
       width:100%;
       max-width:700px;
       margin:10px auto 30px;
+      position: relative;
     }
     #trending {
       display:inline-block;
@@ -58,7 +59,8 @@
       font-size:1.2rem;
       font-style:italic;
       color:#1a73e8;
-      padding-left:100%;
+      position:absolute;
+      will-change:transform;
     }
 
     section.card {
@@ -148,10 +150,11 @@
 
   <!-- Trending Members -->
   <div id="trending-wrapper">
-    <div id="trending">🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now! 🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!</div>
+    <div id="trending">🔥 Trending <span id="memberCount">90</span> members joining our WhatsApp group! Live session at 9:15 AM | Limited Seats!</div>
   </div>
 </header>
 
+<!-- Rest of your page remains unchanged -->
 <section class="card">
   <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" id="joinBtnTop" aria-label="Join WhatsApp Group">Join WhatsApp Group</a>
   <div class="timer">
@@ -304,43 +307,30 @@
     });
   });
 
-  // --- Trending ticker: seamless scrolling & smooth member increase ---
-  (function(){
-    const trendingEl = document.getElementById('trending');
-    let members = 90; // starting number
+  // Smooth Trending Ticker
+  const trending = document.getElementById('trending');
+  const memberCountEl = document.getElementById('memberCount');
+  let count = 90;
+  let speed = 0.5; // px per frame
+  let x = trending.offsetWidth;
 
-    // Duplicate content for seamless scrolling
-    trendingEl.innerHTML = trendingEl.innerHTML + " " + trendingEl.innerHTML;
-
-    let offset = 0;
-    const speed = 1.2; // px per frame
-    function scrollTicker(){
-      offset -= speed;
-      if(Math.abs(offset) >= trendingEl.scrollWidth/2) offset = 0;
-      trendingEl.style.transform = `translateX(${offset}px)`;
-      requestAnimationFrame(scrollTicker);
+  function animateTicker(){
+    x -= speed;
+    if(x < -trending.offsetWidth){
+      x = trending.offsetWidth;
     }
-    scrollTicker();
+    trending.style.transform = `translateX(${x}px)`;
+    requestAnimationFrame(animateTicker);
+  }
+  animateTicker();
 
-    // Update member count in text
-    function updateMembersText() {
-      trendingEl.innerHTML = trendingEl.innerHTML.replace(/\d+ members/, `${members} members`);
-      // Ensure duplication for seamless scroll
-      trendingEl.innerHTML = trendingEl.innerHTML + " " + trendingEl.innerHTML.split(" ").slice(trendingEl.innerHTML.split(" ").length/2).join(" ");
-    }
-
-    // Smooth incremental growth
-    function incrementMembers() {
-      const increment = Math.floor(Math.random()*2)+1; // 1 or 2 members per update
-      members += increment;
-      updateMembersText();
-      const interval = 500 + Math.random()*1000; // vary interval 0.5-1.5s for natural feel
-      setTimeout(incrementMembers, interval);
-    }
-
-    updateMembersText();
-    setTimeout(incrementMembers, 800);
-  })();
+  // Gradually increase member count
+  function increaseMembers(){
+    count += Math.random() < 0.5 ? 0 : 1; // small gradual increase
+    memberCountEl.textContent = count;
+    setTimeout(increaseMembers, 1500 + Math.random()*1500); // slow random interval
+  }
+  increaseMembers();
 </script>
 
 </body>
