@@ -194,6 +194,35 @@ h1, .subheader, .title-image {
     height: auto;
   }
 }
+    /* Make cards fully responsive like header */
+section.card, .faq-section, .testimonial-section {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 20px; /* padding inside so content doesn't touch edges */
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Make WhatsApp buttons fully responsive */
+.whatsapp-button {
+  width: 100%;
+  max-width: 700px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+}
+
+/* Mobile adjustments */
+@media(max-width:750px){
+  section.card, .faq-section, .testimonial-section {
+    width: 100%;
+    padding: 0 15px;
+  }
+  .whatsapp-button {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+}
   </style>
 </head>
 <body>
