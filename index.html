@@ -22,7 +22,7 @@
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 
-  <!-- Font Awesome for social icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
@@ -44,7 +44,6 @@
       font-weight:800;
       font-size:2.2rem;
       margin-bottom:15px;
-      line-height:1.3;
     }
 
     h2 {
@@ -59,18 +58,15 @@
       height:auto;
       border-radius:12px;
       margin-bottom:25px;
-      display:block;
-      margin-left:auto;
-      margin-right:auto;
     }
 
     .subheader {
       font-size:1.1rem;
       margin-bottom:10px;
-      line-height:1.5;
       font-weight:bold;
       max-width:700px;
       margin:0 auto 15px auto;
+      line-height:1.5;
     }
 
     section.card {
@@ -82,19 +78,11 @@
       width:700px;
       max-width:90%;
       text-align:center;
-      transition:transform 0.25s ease, box-shadow 0.25s ease;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    section.card:hover {
-      transform:translateY(-3px);
-      box-shadow:0 6px 15px rgba(0,0,0,0.12);
+      transition:0.25s;
     }
 
     .whatsapp-button {
-      position: relative;
-      background: linear-gradient(to bottom, #075E54 0%, #04392c 100%);
+      background: linear-gradient(to bottom, #075E54, #04392c);
       color: #fff;
       padding: 18px 35px;
       font-size: 1.25rem;
@@ -102,10 +90,9 @@
       font-weight: 700;
       text-decoration: none;
       display: inline-block;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
       margin: 15px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      position: relative;
       overflow: hidden;
     }
 
@@ -118,78 +105,54 @@
       height: 100%;
       background: linear-gradient(
         120deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.25) 50%,
-        rgba(255, 255, 255, 0) 100%
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.25) 50%,
+        rgba(255,255,255,0) 100%
       );
       transform: skewX(-20deg);
       animation: shine 6s linear infinite;
     }
 
     @keyframes shine {
-      0% { left: -75%; }
-      100% { left: 125%; }
-    }
-
-    .whatsapp-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.35);
-    }
-
-    .whatsapp-button:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      0% { left:-75%; }
+      100% { left:125%; }
     }
 
     .timer {
       margin-top:15px;
       font-size:1.2rem;
-      font-weight:bold;
       display:flex;
       justify-content:center;
-      align-items:center;
       gap:5px;
+      font-weight:bold;
     }
 
     .fire {
-      display:inline-block;
-      will-change:transform, text-shadow;
       animation:fireFlicker 0.8s infinite;
     }
 
     @keyframes fireFlicker {
-      0% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9c00,0 0 5px #ff6600;}
-      50% {transform:scale(1.05) rotate(-2deg); text-shadow:0 0 3px #ffb84d,0 0 6px #ff9933;}
-      100% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9933,0 0 5px #ff6600;}
+      0% { transform:scale(1); }
+      50% { transform:scale(1.05); }
+      100% { transform:scale(1); }
     }
 
-    .text-normal{ font-weight:bold; color:#333; }
-    .countdown{ color:#c00; font-weight:bold; }
+    .countdown { color:#c00; font-weight:bold; }
 
-    .faq-section { margin-top:30px; margin-bottom:20px; width:700px; max-width:90%; text-align:center; }
-    .faq-card { background:#fff; border-radius:12px; padding:18px 20px; margin:8px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; text-align:center; transition:all 0.3s ease; }
+    .faq-section { margin-top:30px; width:700px; max-width:90%; }
+    .faq-card { background:#fff; padding:18px 20px; margin:8px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); border-radius:12px; cursor:pointer; }
     .faq-question { font-weight:700; color:#1a73e8; margin:0; }
-    .faq-answer { margin-top:10px; display:none; text-align:center; font-weight:500; transition: all 0.3s ease; }
+    .faq-answer { display:none; margin-top:10px; font-weight:500; }
 
-    .testimonial-section { margin-top:20px; max-width:700px; text-align:center; }
-    .testimonial-section h3{ font-size:1.8rem; color:#222; margin-bottom:20px; }
-    .testimonial { background:#fff; padding:18px 22px; margin:12px auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-style:italic; font-weight:400; text-align:left; width:700px; max-width:90%; transition:transform 0.25s ease, box-shadow 0.25s ease; }
-    .testimonial:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
-    .testimonial-author { margin-top:8px; font-size:0.95rem; font-weight:700; color:#008000; display:flex; align-items:center; gap:6px; }
-    .stars{ font-size:1.2rem; color:#FFD700; letter-spacing:1px; margin-bottom:8px; }
-    .social-logo { width:20px; height:20px; vertical-align:middle; margin-right:6px; }
+    .testimonial-section { margin-top:20px; max-width:700px; }
+    .testimonial-section h3{ font-size:1.8rem; margin-bottom:20px; }
+    .testimonial { background:#fff; padding:18px 22px; margin:12px 0; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-style:italic; text-align:left; }
+    .stars { font-size:1.2rem; color:#FFD700; margin-bottom:8px; }
+    .testimonial-author { margin-top:8px; font-weight:700; color:#008000; display:flex; align-items:center; gap:6px; }
 
-    .footer{ margin-top:40px; font-size:0.85rem; color:#666; text-align:center; max-width:700px; }
+    .footer{ margin-top:40px; font-size:0.85rem; color:#666; }
 
-    @media(max-width:750px){
-      section.card, .testimonial, .faq-section, .faq-card{ width:90%; } 
-      h1{ font-size:1.8rem; } 
-      .whatsapp-button{ font-size:1rem; padding:15px 25px; } 
-      .timer{ font-size:1.1rem; } 
-      .testimonial{text-align:center;} 
-    }
-
-    /* Trending ticker */
+    /* Smooth slow scrolling ticker */
     #trending-wrapper {
       width: 100%;
       max-width: 700px;
@@ -203,7 +166,7 @@
       font-weight: bold;
       font-size: 1.2rem;
       font-style: italic;
-      animation: scroll-left 15s linear infinite;
+      animation: scroll-left 35s linear infinite;
     }
 
     @keyframes scroll-left {
@@ -212,27 +175,32 @@
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <h1>Welcome to India Stock Market Academy</h1>
-  <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdrL5063XTiePpIO4-PHflhsPa0y4K-BgM4cOo7G7Nls_VGUsn-D_0SDpGmJn8lPv45lWgzHBBp4tzgLEqHFmvN-EZjjD0KswxOFxHilcXfw9aUlm0JVKJ20m5Pe2NXOsOwT1PPFUAeB-453alcemUsp7SRiFk0Cy4e1bYWCUpZfkFnCTycZXLIrttfOed2o2re3Y8wWfuEY0AAfIp0GDaXiVnidALOVhXL_aI=w1280" width="700" height="400" alt="Stock Market Learning" class="title-image" loading="lazy">
-  <p class="subheader">Get real trading insights, risk management lessons, market updates, and practical tips daily. No fees, no paid courses — just genuine learning from experienced traders.</p>
 
-  <!-- Trending Members Ticker -->
+  <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdrL5063XTiePpIO4-PHflhsPa0y4K-BgM4cOo7G7Nls_VGUsn-D_0SDpGmJn8lPv45lWgzHBBp4tzgLEqHFmvN-EZjjD0KswxOFxHilcXfw9aUlm0JVKJ20m5Pe2NXOsOwT1PPFUAeB-453alcemUsp7SRiFk0Cy4e1bYWCUpZfkFnCTycZXLIrttfOed2o2re3Y8wWfuEY0AAfIp0GDaXiVnidALOVhXL_aI=w1280"
+       class="title-image" loading="lazy">
+
+  <p class="subheader">
+    Get real trading insights, risk management lessons, market updates, and practical tips daily.  
+    No fees, no paid courses — just genuine learning from experienced traders.
+  </p>
+
+  <!-- SLOW SMOOTH TRENDING TICKER -->
   <div id="trending-wrapper">
-    <p id="trending">
-      🔥 Trending: 90 members joining our WhatsApp group! 🔥 Trending: 90 members joining our WhatsApp group! 🔥 Trending: 90 members joining our WhatsApp group!
-    </p>
+    <p id="trending"></p>
   </div>
 </header>
 
 <section class="card">
-  <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" id="joinBtnTop" aria-label="Join WhatsApp Group">Join WhatsApp Group</a>
+  <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button">Join WhatsApp Group</a>
   <div class="timer">
     <span class="fire">🔥</span>
-    <span class="text-normal">Limited Time Offer:</span>
-    <span class="countdown" aria-live="polite">27:30</span>
+    <span>Limited Time Offer:</span>
+    <span class="countdown">27:30</span>
   </div>
 </section>
 
@@ -248,93 +216,75 @@
 </section>
 
 <section class="card">
-  <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" id="joinBtnBottom" aria-label="Join WhatsApp Group">Join WhatsApp Group</a>
+  <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button">Join WhatsApp Group</a>
   <div class="timer">
     <span class="fire">🔥</span>
-    <span class="text-normal">Limited Time Offer:</span>
-    <span class="countdown" aria-live="polite">27:30</span>
+    <span>Limited Time Offer:</span>
+    <span class="countdown">27:30</span>
   </div>
 </section>
 
-<!-- FAQ Section -->
+<!-- FAQ -->
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
+
   <article class="faq-card">
     <p class="faq-question">What will I learn in this group?</p>
-    <div class="faq-answer">You'll learn how to reduce risk in stock trading, stay updated on stock news, portfolio guidance, market trend updates and daily premium stock picks.</div>
+    <div class="faq-answer">You'll learn risk reduction, stock insights, trending news, portfolio guidance, and premium stock picks.</div>
   </article>
+
   <article class="faq-card">
     <p class="faq-question">Is there any fee to join?</p>
-    <div class="faq-answer">No, joining the group is completely free! After you make a profit from your trades, only a 0.01% transaction fee will be charged. Otherwise, learning and guidance in the group is totally free.</div>
+    <div class="faq-answer">Joining is completely free! Only 0.01% fee applies after successful profitable trades.</div>
   </article>
+
   <article class="faq-card">
     <p class="faq-question">Who can join this group?</p>
-    <div class="faq-answer">Anyone interested in learning about the Indian stock market, from beginners to experienced traders. No prior experience is required.</div>
+    <div class="faq-answer">Beginners, intermediates, or experts — everyone can join.</div>
   </article>
+
   <article class="faq-card">
     <p class="faq-question">Can I ask questions in the group?</p>
-    <div class="faq-answer">Absolutely! Members are encouraged to ask questions. Our mentor Mr. Navneet Arora and group coordinator are always ready to guide you.</div>
+    <div class="faq-answer">Absolutely! Our mentor, Mr. Navneet Arora, and coordinators are always ready to help.</div>
   </article>
+
   <article class="faq-card">
     <p class="faq-question">When does the live session start?</p>
-    <div class="faq-answer">Live session starts at 9:15 AM (IST) every Monday to Friday.</div>
+    <div class="faq-answer">Live sessions start at 9:15 AM (IST) Monday–Friday.</div>
   </article>
+
   <article class="faq-card">
-    <p class="faq-question">Must I be active everyday in the group chat?</p>
-    <div class="faq-answer">No! You can join and stay active at your available time, and you can review the conversation later.</div>
+    <p class="faq-question">Do I need to be active daily?</p>
+    <div class="faq-answer">No — join anytime and read messages when you are free.</div>
   </article>
 </section>
 
-<!-- Testimonial Section -->
+<!-- Testimonials -->
 <section class="testimonial-section">
   <h3>What Our Members Say 💬</h3>
 
   <article class="testimonial">
     <div class="stars">★★★★★</div>
-    “I joined this group to learn about stock trading, and I’m amazed by the clarity of explanations. The mentors are very supportive!”
-    <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" class="social-logo" loading="lazy"> – Rakesh M.
-    </div>
+    “Excellent explanations. The mentors are very supportive!”
+    <div class="testimonial-author"><img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" class="social-logo">– Rakesh M.</div>
   </article>
 
   <article class="testimonial">
     <div class="stars">★★★★☆</div>
-    “The community is very helpful, and I’ve already learned so many new things about trading.”
-    <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-logo" loading="lazy"> – Priya S.
-    </div>
+    “Great community. Learned so many new insights!”
+    <div class="testimonial-author"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="social-logo">– Priya S.</div>
   </article>
 
   <article class="testimonial">
     <div class="stars">★★★★★</div>
-    “Thanks to the team, I’ve started understanding market trends and managing my investments better. Highly recommended!”
-    <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-logo" loading="lazy"> – Arjun P.
-    </div>
+    “Market updates are extremely helpful. Highly recommended!”
+    <div class="testimonial-author"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="social-logo">– Arjun P.</div>
   </article>
 
   <article class="testimonial">
     <div class="stars">★★★★☆</div>
-    “I was hesitant at first, but this group made learning the stock market simple and enjoyable.”
-    <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" class="social-logo" loading="lazy"> – Sneha R.
-    </div>
-  </article>
-
-  <article class="testimonial">
-    <div class="stars">★★★★★</div>
-    “Daily insights and stock picks are excellent. The mentors guide you patiently through every step.”
-    <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook" class="social-logo" loading="lazy"> – Karan D.
-    </div>
-  </article>
-
-  <article class="testimonial">
-    <div class="stars">★★★★☆</div>
-    “I love the risk management lessons and market updates. Really helpful for beginners like me.”
-    <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-logo" loading="lazy"> – Ananya T.
-    </div>
+    “Learning trading became simple and enjoyable.”
+    <div class="testimonial-author"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" class="social-logo">– Sneha R.</div>
   </article>
 </section>
 
@@ -342,43 +292,33 @@
   © 2025 India Stock Market Academy. All rights reserved.
 </footer>
 
-<script defer>
+<script>
   // Countdown timer
   const countdownElements = document.querySelectorAll('.countdown');
   let totalSeconds = 27*60 + 30;
+
   function updateCountdown(){
     const minutes = Math.floor(totalSeconds/60);
     const seconds = totalSeconds % 60;
-    countdownElements.forEach(el => el.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`);
-    if(totalSeconds > 0){ totalSeconds--; setTimeout(updateCountdown,1000); }
+    countdownElements.forEach(el => {
+      el.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`;
+    });
+    if(totalSeconds > 0){
+      totalSeconds--;
+      setTimeout(updateCountdown,1000);
+    }
   }
   updateCountdown();
 
-  // Event tracking
-  const joinTop = document.getElementById('joinBtnTop');
-  const joinBottom = document.getElementById('joinBtnBottom');
-  joinTop.addEventListener('click', () => { fbq('trackCustom','TopWhatsAppJoinClick'); });
-  joinBottom.addEventListener('click', () => { fbq('trackCustom','BottomWhatsAppJoinClick'); });
-
-  // FAQ toggle with smooth animation
+  // FAQ toggles
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
-      const answer = q.nextElementSibling;
-      if(answer.style.display === 'block'){
-        answer.style.height = answer.scrollHeight + 'px';
-        requestAnimationFrame(()=>{ answer.style.height = '0px'; });
-        setTimeout(()=>{ answer.style.display='none'; answer.style.height='auto'; },300);
-      } else {
-        answer.style.display = 'block';
-        const height = answer.scrollHeight;
-        answer.style.height = '0px';
-        requestAnimationFrame(()=>{ answer.style.height = height + 'px'; });
-        setTimeout(()=>{ answer.style.height='auto'; },300);
-      }
+      const ans = q.nextElementSibling;
+      ans.style.display = ans.style.display === 'block' ? 'none' : 'block';
     });
   });
 
-  // Trending members ticker (increment every hour)
+  // Trending ticker with spacing + smooth speed
   (function(){
     const trendingEl = document.getElementById('trending');
     const storageKey = 'trendingMembers';
@@ -386,19 +326,19 @@
     if(members < 90) members = 90;
 
     function updateDisplay() {
-      const text = `🔥 Trending: ${members} members joining our WhatsApp group! `;
-      trendingEl.textContent = text + text + text;
+      const base = `🔥 Trending: ${members} members joining our WhatsApp group!    `; 
+      trendingEl.textContent = base.repeat(6);
     }
 
     function incrementMembers() {
-      const increment = Math.floor(Math.random() * 15) + 1; // 1–15 per hour
-      members += increment;
-      localStorage.setItem(storageKey, members);
+      const add = Math.floor(Math.random()*15)+1;
+      members += add;
+      localStorage.setItem(storageKey,members);
       updateDisplay();
     }
 
     updateDisplay();
-    setInterval(incrementMembers, 3600000); // every hour
+    setInterval(incrementMembers,3600000);
   })();
 </script>
 
