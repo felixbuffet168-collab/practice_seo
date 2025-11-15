@@ -35,7 +35,26 @@
     }
     section.card:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
 
-    .whatsapp-button { position:relative; background:#075E54; color:#fff; padding:18px 35px; font-size:1.25rem; border-radius:50px; font-weight:600; text-decoration:none; display:inline-block; transition:transform 0.25s ease, box-shadow 0.25s ease; margin:15px 0; will-change: transform; }
+    .whatsapp-button {
+  position: relative;
+  background: #075E54;
+  color: #fff;
+  padding: 18px 35px;
+  font-size: 1.25rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  margin: 15px 0;
+  will-change: transform;
+
+  /* Add these lines for sharper text */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+    
     .whatsapp-button::before { content:''; position:absolute; top:0; left:-75%; width:40%; height:100%; background:linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%); transform:skewX(-20deg); animation:shine 6s linear infinite; will-change:left; }
     @keyframes shine { 0%{left:-75%} 100%{left:125%} }
     .whatsapp-button:hover { transform:translateY(-2px) scale(1.03); box-shadow:0 6px 15px rgba(0,0,0,0.2); }
