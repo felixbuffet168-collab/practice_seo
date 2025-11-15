@@ -3,13 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>India Stock Market Academy | Free WhatsApp Learning Community</title>
+  <title>Free Indian Stock Market Learning Community | WhatsApp Group</title>
   <meta name="description" content="Join our free Indian Stock Market learning community on WhatsApp. Get daily stock picks, technical insights, portfolio guidance, and market trend updates.">
   <meta name="keywords" content="Indian stock market, stock trading tips, trading community, WhatsApp group, stock analysis, market updates">
 
-  <!-- Preload Google Fonts -->
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Free Indian Stock Market Learning Community | WhatsApp Group">
+  <meta property="og:description" content="Get daily stock picks, technical insights, and market trend updates. Learn to trade safely with expert guidance.">
+  <meta property="og:image" content="https://lh3.googleusercontent.com/sitesv/AAzXCkftGdJgzfU4aWcULVg7rn34jh64xnN-lQYFBZrycph4qWzikn3weRZ8hof8PIZeCCLCvFtvM6liRLIsP7jALcdGeUh-ckoLs0-4xvV80-JXXczWG8YYSKVqAUY7xQKv9c1hx4-F5b0qlscLdFpc-Z3R_j30Glw-C5XqI56wPt2r9Pn3h6x1zYj9AArA4vQjCTkq_6xrA7HvkZ3HjQcWvpB5cBq97NW7NWOvcHQ=w1280">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://indiastockmarketacademy.github.io/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Indian Stock Market Learning Community | WhatsApp Group">
+  <meta name="twitter:description" content="Join our free WhatsApp group for expert guidance, daily stock picks, and market insights.">
+  <meta name="twitter:image" content="https://lh3.googleusercontent.com/sitesv/AAzXCkftGdJgzfU4aWcULVg7rn34jh64xnN-lQYFBZrycph4qWzikn3weRZ8hof8PIZeCCLCvFtvM6liRLIsP7jALcdGeUh-ckoLs0-4xvV80-JXXczWG8YYSKVqAUY7xQKv9c1hx4-F5b0qlscLdFpc-Z3R_j30Glw-C5XqI56wPt2r9Pn3h6x1zYj9AArA4vQjCTkq_6xrA7HvkZ3HjQcWvpB5cBq97NW7NWOvcHQ=w1280">
+
+  <!-- Google Fonts -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
     body { font-family:'Roboto',sans-serif; margin:0; padding:40px 20px; background:#f8f9fa; color:#333; display:flex; flex-direction:column; align-items:center; text-align:center; overflow-x:hidden; }
@@ -70,6 +84,7 @@
       transform: translateY(-3px);
       box-shadow: 0 6px 12px rgba(0,0,0,0.35);
     }
+
     .whatsapp-button:active {
       transform: translateY(1px);
       box-shadow: 0 2px 6px rgba(0,0,0,0.3);
@@ -82,56 +97,27 @@
     .text-normal{ font-weight:bold; color:#333; }
     .countdown{ color:#c00; font-weight:bold; }
 
-    /* FAQ Section */
-    .faq-section {
-      margin-top: 30px;
-      max-width: 700px;
-      text-align: center;
-    }
-    .faq-section h3 {
-      font-size: 1.8rem;
-      color: #1a73e8;
-      margin-bottom: 20px;
-    }
-    .faq-card {
-      background: #fff;
-      border-radius: 12px;
-      padding: 18px 20px;
-      margin: 10px auto;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .faq-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-    }
-    .faq-question {
-      font-weight: 700;
-      color: #222;
-      margin-bottom: 8px;
-    }
-    .faq-answer {
-      font-weight: 500;
-      color: #333;
-      line-height: 1.5;
-    }
+    .faq-section{ margin-top:40px; margin-bottom:30px; width:700px; max-width:90%; text-align:center; }
+    .faq-card{ background:#fff; border-radius:12px; padding:18px 20px; margin:8px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; text-align:center; }
+    .faq-question{ font-weight:700; color:#1a73e8; margin:0; }
+    .faq-answer{ margin-top:10px; display:none; text-align:center; font-weight:500; }
 
-    /* Testimonial Section */
     .testimonial-section{ margin-top:30px; max-width:700px; text-align:center; }
-    .testimonial-section h3{ font-size:1.8rem; color:#222; margin-bottom:25px; }
-    .testimonial { background:#fff; padding:18px 22px; margin:15px auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-style:italic; font-weight:400; text-align:left; width:700px; max-width:90%; transition:transform 0.25s ease, box-shadow 0.25s ease; }
+    .testimonial-section h3{ font-size:1.8rem; color:#222; margin-bottom:20px; }
+
+    .testimonial { background:#fff; padding:18px 22px; margin:12px auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-style:italic; font-weight:400; text-align:left; width:700px; max-width:90%; transition:transform 0.25s ease, box-shadow 0.25s ease; }
     .testimonial:hover{ transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
-    .testimonial-author{ margin-top:8px; font-size:0.95rem; font-weight:700; color:#008000; }
+    .testimonial-author{ margin-top:8px; font-size:0.95rem; font-weight:700; color:#008000; display:flex; align-items:center; gap:6px; }
     .stars{ font-size:1.2rem; color:#FFD700; letter-spacing:1px; margin-bottom:8px; }
 
     .footer{ margin-top:40px; font-size:0.85rem; color:#666; text-align:center; max-width:700px; }
 
-    @media(max-width:750px){
-      section.card, .testimonial, .faq-card { width:90%; }
-      h1{ font-size:1.8rem; }
-      .whatsapp-button{ font-size:1rem; padding:15px 25px; }
-      .timer{ font-size:1.1rem; }
-      .testimonial{text-align:center;}
+    @media(max-width:750px){ 
+      section.card, .testimonial, .faq-section, .faq-card{ width:90%; } 
+      h1{ font-size:1.8rem; } 
+      .whatsapp-button{ font-size:1rem; padding:15px 25px; } 
+      .timer{ font-size:1.1rem; } 
+      .testimonial{text-align:center;} 
     }
   </style>
 </head>
@@ -174,36 +160,36 @@
 
   <!-- FAQ Section -->
   <section class="faq-section">
-    <h3>Frequently Asked Questions ❓</h3>
-
+    <h2>Frequently Asked Questions</h2>
+    
     <article class="faq-card">
-      <p class="faq-question">Q1: What will I learn in this group?</p>
-      <p class="faq-answer">You’ll learn how to reduce risk in stock trading, stay updated on stock news, receive portfolio guidance, follow market trend updates, and get daily premium stock picks.</p>
+      <p class="faq-question">What will I learn in this group?</p>
+      <div class="faq-answer">You'll learn how to reduce risk in stock trading, stay updated on stock news, portfolio guidance, market trend updates and daily premium stock picks.</div>
     </article>
 
     <article class="faq-card">
-      <p class="faq-question">Q2: Is there any fee to join?</p>
-      <p class="faq-answer">No! Joining the group is completely free. After you make a profit from your trades, only a 0.01% transaction fee will be charged. Otherwise, learning and guidance remain free.</p>
+      <p class="faq-question">Is there any fee to join?</p>
+      <div class="faq-answer">No, joining the group is completely free! After you make a profit from your trades, only a 0.01% transaction fee will be charged. Otherwise, learning and guidance in the group is totally free.</div>
     </article>
 
     <article class="faq-card">
-      <p class="faq-question">Q3: Who can join this group?</p>
-      <p class="faq-answer">Anyone interested in learning about the Indian stock market—from beginners to experienced traders. No prior experience is required.</p>
+      <p class="faq-question">Who can join this group?</p>
+      <div class="faq-answer">Anyone interested in learning about the Indian stock market, from beginners to experienced traders. No prior experience is required.</div>
     </article>
 
     <article class="faq-card">
-      <p class="faq-question">Q4: Can I ask questions in the group?</p>
-      <p class="faq-answer">Absolutely! Members are encouraged to ask questions, and our mentor <strong>Mr. Navneet Arora</strong> along with the group coordinator are always ready to guide you.</p>
+      <p class="faq-question">Can I ask questions in the group?</p>
+      <div class="faq-answer">Absolutely! Members are encouraged to ask questions. Our mentor Mr. Navneet Arora and group coordinator are always ready to guide you.</div>
     </article>
 
     <article class="faq-card">
-      <p class="faq-question">Q5: When do live sessions start?</p>
-      <p class="faq-answer">Live sessions start at <strong>9:15 AM IST</strong>, Monday to Friday.</p>
+      <p class="faq-question">When does the live session start?</p>
+      <div class="faq-answer">Live session starts at 9:15 AM (IST) every Monday to Friday.</div>
     </article>
 
     <article class="faq-card">
-      <p class="faq-question">Q6: Must I be active every day in the group chat?</p>
-      <p class="faq-answer">Not at all! You can participate at your convenience and review past conversations anytime.</p>
+      <p class="faq-question">Must I be active everyday in the group chat?</p>
+      <div class="faq-answer">No! You can join and stay active at your available time, and you can review the conversation later.</div>
     </article>
   </section>
 
@@ -214,38 +200,49 @@
     <article class="testimonial">
       <div class="stars">★★★★★</div>
       “I joined this group to learn about stock trading, and I’m amazed by the clarity of explanations. The mentors are very supportive!”
-      <div class="testimonial-author">– Rakesh M.</div>
+      <div class="testimonial-author">
+        <i class="fab fa-facebook"></i> – Rakesh M.
+      </div>
     </article>
 
     <article class="testimonial">
       <div class="stars">★★★★☆</div>
       “It took me about 30 minutes of waiting before my group request got approved, but it was worth it! The community is helpful, and I’ve already learned so many new things about trading.”
-      <div class="testimonial-author">– Priya S.</div>
+      <div class="testimonial-author">
+        <i class="fab fa-instagram"></i> – Priya S.
+      </div>
     </article>
 
     <article class="testimonial">
       <div class="stars">★★★★★</div>
       “Thanks to the team, I’ve started understanding market trends and managing my investments better. Highly recommended!”
-      <div class="testimonial-author">– Arjun P.</div>
+      <div class="testimonial-author">
+        <i class="fab fa-whatsapp"></i> – Arjun P.
+      </div>
     </article>
 
-    <!-- Add 3 more random testimonials with blurred last names -->
     <article class="testimonial">
       <div class="stars">★★★★☆</div>
-      “The daily stock picks and live discussions have boosted my confidence. Very practical guidance!”
-      <div class="testimonial-author">– Sneha K.</div>
+      “The insights and stock picks are practical. I feel more confident making trades now.”
+      <div class="testimonial-author">
+        <i class="fa-solid fa-envelope"></i> – Sneha K.
+      </div>
     </article>
 
     <article class="testimonial">
       <div class="stars">★★★★★</div>
-      “I love how the mentors explain technical analysis in simple terms. Perfect for beginners like me.”
-      <div class="testimonial-author">– Ankit R.</div>
+      “Amazing community and mentors! They really care about helping beginners learn safely.”
+      <div class="testimonial-author">
+        <i class="fab fa-facebook"></i> – Aditya R.
+      </div>
     </article>
 
     <article class="testimonial">
-      <div class="stars">★★★★★</div>
-      “Being part of this community has made my trading journey much safer and smarter. Excellent support!”
-      <div class="testimonial-author">– Meera D.</div>
+      <div class="stars">★★★★☆</div>
+      “I’ve improved my portfolio strategy significantly after joining this group.”
+      <div class="testimonial-author">
+        <i class="fab fa-instagram"></i> – Anjali S.
+      </div>
     </article>
   </section>
 
@@ -255,21 +252,30 @@
 
   <script defer>
     // Countdown timer in MM:SS
-    const countdownElements=document.querySelectorAll('.countdown');
-    let totalSeconds=27*60+30;
+    const countdownElements = document.querySelectorAll('.countdown');
+    let totalSeconds = 27*60 + 30;
     function updateCountdown(){
-      const minutes=Math.floor(totalSeconds/60);
-      const seconds=totalSeconds%60;
-      countdownElements.forEach(el=>el.textContent=`${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`);
-      if(totalSeconds>0){ totalSeconds--; setTimeout(updateCountdown,1000); }
+      const minutes = Math.floor(totalSeconds/60);
+      const seconds = totalSeconds % 60;
+      countdownElements.forEach(el => el.textContent = `${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`);
+      if(totalSeconds > 0){ totalSeconds--; setTimeout(updateCountdown,1000); }
     }
     updateCountdown();
 
     // Event tracking
-    const joinTop=document.getElementById('joinBtnTop');
-    const joinBottom=document.getElementById('joinBtnBottom');
-    joinTop.addEventListener('click',()=>{fbq('trackCustom','TopWhatsAppJoinClick');});
-    joinBottom.addEventListener('click',()=>{fbq('trackCustom','BottomWhatsAppJoinClick');});
+    const joinTop = document.getElementById('joinBtnTop');
+    const joinBottom = document.getElementById('joinBtnBottom');
+    joinTop.addEventListener('click', () => { fbq('trackCustom','TopWhatsAppJoinClick'); });
+    joinBottom.addEventListener('click', () => { fbq('trackCustom','BottomWhatsAppJoinClick'); });
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const answer = q.nextElementSibling;
+        answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+      });
+    });
   </script>
+
 </body>
 </html>
