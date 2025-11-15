@@ -35,28 +35,7 @@
     }
     section.card:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
 
-    /* Trending Ticker */
-    #trending-wrapper {
-      width: 100%;
-      max-width: 700px;
-      overflow: hidden;
-      margin: 20px auto 30px;
-    }
-    #trending {
-      display: inline-block;
-      white-space: nowrap;
-      font-weight: bold;
-      font-size: 1rem;
-      font-style: italic;
-      color: #c00;
-      animation: scroll-left 35s linear infinite;
-    }
-    @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-
-    /* WhatsApp Button + Shine */
+    /* Main WhatsApp Button with 3D + shine */
     .whatsapp-button {
       position: relative;
       background: linear-gradient(to bottom, #075E54 0%, #04392c 100%);
@@ -74,6 +53,7 @@
       overflow: hidden;
     }
 
+    /* Shiny effect */
     .whatsapp-button::before {
       content: '';
       position: absolute;
@@ -81,23 +61,35 @@
       left: -75%;
       width: 40%;
       height: 100%;
-      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.25) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
       transform: skewX(-20deg);
       animation: shine 6s linear infinite;
     }
 
-    @keyframes shine { 0% { left:-75%; } 100% { left:125%; } }
+    @keyframes shine {
+      0% { left: -75%; }
+      100% { left: 125%; }
+    }
 
-    .whatsapp-button:hover { transform:translateY(-3px); box-shadow:0 6px 12px rgba(0,0,0,0.35); }
-    .whatsapp-button:active { transform:translateY(1px); box-shadow:0 2px 6px rgba(0,0,0,0.3); }
+    /* Hover and active states for 3D effect */
+    .whatsapp-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.35);
+    }
+
+    .whatsapp-button:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
 
     .timer { margin-top:15px; font-size:1.2rem; font-weight:bold; display:flex; justify-content:center; align-items:center; gap:5px; }
     .fire { display:inline-block; will-change:transform, text-shadow; animation:fireFlicker 0.8s infinite; }
-    @keyframes fireFlicker { 
-      0% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9c00,0 0 5px #ff6600;} 
-      50% {transform:scale(1.05) rotate(-2deg); text-shadow:0 0 3px #ffb84d,0 0 6px #ff9933;} 
-      100% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9933,0 0 5px #ff6600;} 
-    }
+    @keyframes fireFlicker { 0% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9c00,0 0 5px #ff6600;} 50% {transform:scale(1.05) rotate(-2deg); text-shadow:0 0 3px #ffb84d,0 0 6px #ff9933;} 100% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9933,0 0 5px #ff6600;} }
 
     .text-normal{ font-weight:bold; color:#333; }
     .countdown{ color:#c00; font-weight:bold; }
@@ -122,11 +114,6 @@
     <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdrL5063XTiePpIO4-PHflhsPa0y4K-BgM4cOo7G7Nls_VGUsn-D_0SDpGmJn8lPv45lWgzHBBp4tzgLEqHFmvN-EZjjD0KswxOFxHilcXfw9aUlm0JVKJ20m5Pe2NXOsOwT1PPFUAeB-453alcemUsp7SRiFk0Cy4e1bYWCUpZfkFnCTycZXLIrttfOed2o2re3Y8wWfuEY0AAfIp0GDaXiVnidALOVhXL_aI=w1280" width="700" height="400" alt="Stock Market Learning" class="title-image" loading="lazy">
     <p class="subheader">Get real trading insights, risk management lessons, market updates, and practical tips daily. No fees, no paid courses — just genuine learning from experienced traders.</p>
   </header>
-
-  <!-- ⭐ NEW TRENDING TICKER -->
-  <div id="trending-wrapper">
-    <p id="trending"></p>
-  </div>
 
   <main>
     <section class="card">
@@ -159,29 +146,29 @@
     </section>
 
     <section class="card" aria-labelledby="faqHeading">
-      <h2 id="faqHeading">Frequently Asked Questions</h2>
+  <h2 id="faqHeading">Frequently Asked Questions</h2>
 
-      <details>
-        <summary>Is this WhatsApp group really free?</summary>
-        <p>Yes! Joining our group is completely free. There are no hidden charges or subscription fees.</p>
-      </details>
+  <details>
+    <summary>Is this WhatsApp group really free?</summary>
+    <p>Yes! Joining our group is completely free. There are no hidden charges or subscription fees.</p>
+  </details>
 
-      <details>
-        <summary>Who can join the group?</summary>
-        <p>Anyone interested in learning about the Indian stock market safely, including beginners and intermediate traders.</p>
-      </details>
+  <details>
+    <summary>Who can join the group?</summary>
+    <p>Anyone interested in learning about the Indian stock market safely, including beginners and intermediate traders.</p>
+  </details>
 
-      <details>
-        <summary>Will I get real stock recommendations?</summary>
-        <p>Yes, we share 1–2 high-potential stock picks daily along with technical insights. But remember, trading involves risk, and we always encourage responsible investing.</p>
-      </details>
+  <details>
+    <summary>Will I get real stock recommendations?</summary>
+    <p>Yes, we share 1–2 high-potential stock picks daily along with technical insights. But remember, trading involves risk, and we always encourage responsible investing.</p>
+  </details>
 
-      <details>
-        <summary>Do I need prior experience?</summary>
-        <p>No prior experience is required. We provide guidance suitable for beginners and experienced traders alike.</p>
-      </details>
-    </section>
-
+  <details>
+    <summary>Do I need prior experience?</summary>
+    <p>No prior experience is required. We provide guidance suitable for beginners and experienced traders alike.</p>
+  </details>
+</section>
+    
     <section class="testimonial-section">
       <h3>What Our Members Say 💬</h3>
 
@@ -210,7 +197,7 @@
   </footer>
 
   <script defer>
-    // Countdown timer
+    // Countdown timer in MM:SS
     const countdownElements=document.querySelectorAll('.countdown');
     let totalSeconds=27*60+30;
     function updateCountdown(){
@@ -220,24 +207,6 @@
       if(totalSeconds>0){ totalSeconds--; setTimeout(updateCountdown,1000); }
     }
     updateCountdown();
-
-    // Trending ticker auto text
-    (function(){
-      const trendingEl = document.getElementById('trending');
-      let members = parseInt(localStorage.getItem('trendCount')) || 90;
-
-      function updateText(){
-        const base = `🔥 Trending: ${members} members joining our WhatsApp group!     `;
-        trendingEl.textContent = base.repeat(6);
-      }
-      updateText();
-
-      setInterval(()=>{
-        members += Math.floor(Math.random()*15)+1;
-        localStorage.setItem('trendCount', members);
-        updateText();
-      },3600000);
-    })();
 
     // Event tracking
     const joinTop=document.getElementById('joinBtnTop');
