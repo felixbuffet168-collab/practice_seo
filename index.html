@@ -50,7 +50,6 @@
       width:100%;
       max-width:700px;
       margin:10px auto 30px;
-      position: relative;
     }
     #trending {
       display:inline-block;
@@ -59,9 +58,7 @@
       font-size:1.2rem;
       font-style:italic;
       color:#1a73e8;
-      position: absolute;
-      left: 0;
-      top: 0;
+      padding-left:100%;
     }
 
     section.card {
@@ -121,7 +118,7 @@
     .faq-section { margin-top:30px; margin-bottom:20px; width:700px; max-width:90%; text-align:center; }
     .faq-card { background:#fff; border-radius:12px; padding:18px 20px; margin:8px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; text-align:center; transition:all 0.3s ease; }
     .faq-question { font-weight:700; color:#1a73e8; margin:0; }
-    .faq-answer { margin-top:10px; display:none; text-align:center; font-weight:500; transition: all 0.3s ease; }
+    .faq-answer { margin-top:10px; max-height:0; overflow:hidden; text-align:center; font-weight:500; transition: max-height 0.3s ease; }
 
     /* Testimonials */
     .testimonial-section { margin-top:20px; max-width:700px; text-align:center; }
@@ -151,7 +148,7 @@
 
   <!-- Trending Members -->
   <div id="trending-wrapper">
-    <div id="trending">🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now!</div>
+    <div id="trending">🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now! 🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!</div>
   </div>
 </header>
 
@@ -166,13 +163,13 @@
 
 <section class="card">
   <h2>Why Join Our Community?</h2>
-  <p>💼 We provide expert guidance to help you navigate the stock market with confidence.</p>
+  <p>We provide expert guidance to help you navigate the stock market with confidence.</p>
   <p>• SEBI Registered – Our platform is officially registered and regulated, ensuring credibility and trust.</p>
   <p>• Daily Stock Picks – Receive 1–2 high-potential recommendations every day.</p>
   <p>• Free Technical Insights – Gain expert analysis with no upfront fees.</p>
   <p>• Personalized Stock Reviews – Tailored guidance for your unique portfolio.</p>
   <p>• Market Trend Updates – Stay informed on market direction daily.</p>
-  <p>• No upfront charges – We only charge 0.01% per transaction.</p>
+  <p>💼 No upfront charges – We only charge 0.01% per transaction.</p>
   <p>📈 Grow your investments smartly, steadily, and safely.</p>
 </section>
 
@@ -245,8 +242,8 @@
   <article class="testimonial">
     <div class="stars">★★★★☆</div>
     “I was hesitant at first, but this group made learning the stock market simple and enjoyable.”
-        <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-logo" loading="lazy"> – Sneha R.
+    <div class="testimonial-author">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" class="social-logo" loading="lazy"> – Sneha R.
     </div>
   </article>
 
@@ -262,7 +259,7 @@
     <div class="stars">★★★★☆</div>
     “I love the risk management lessons and market updates. Really helpful for beginners like me.”
     <div class="testimonial-author">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="social-logo" loading="lazy"> – Ananya T.
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" class="social-logo" loading="lazy"> – Ananya T.
     </div>
   </article>
 </section>
@@ -289,21 +286,14 @@
   joinTop.addEventListener('click', () => { fbq('trackCustom','TopWhatsAppJoinClick'); });
   joinBottom.addEventListener('click', () => { fbq('trackCustom','BottomWhatsAppJoinClick'); });
 
-  // FAQ toggle
+  // FAQ toggle optimized (no forced reflow)
   document.querySelectorAll('.faq-question').forEach(q => {
     q.addEventListener('click', () => {
       const answer = q.nextElementSibling;
-      if(answer.style.display === 'block'){
-        const height = answer.scrollHeight;
-        answer.style.height = height + 'px';
-        requestAnimationFrame(()=>{ answer.style.height = '0px'; });
-        setTimeout(()=>{ answer.style.display = 'none'; answer.style.height='auto'; },300);
+      if(answer.style.maxHeight && answer.style.maxHeight !== '0px'){
+        answer.style.maxHeight = '0px';
       } else {
-        answer.style.display = 'block';
-        const height = answer.scrollHeight;
-        answer.style.height = '0px';
-        requestAnimationFrame(()=>{ answer.style.height = height + 'px'; });
-        setTimeout(()=>{ answer.style.height='auto'; },300);
+        answer.style.maxHeight = answer.scrollHeight + 'px';
       }
     });
   });
@@ -311,34 +301,24 @@
   // Trending ticker realistic increment
   const trendingEl = document.getElementById('trending');
   let trendingNumber = 90;
-
   function increaseTrendingNumber() {
     trendingNumber += Math.floor(Math.random() * 3) + 1; // +1 to 3 members
-    trendingEl.textContent = `🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now!`;
+    trendingEl.textContent = `🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!`;
   }
-
-  // First after 5s, then every 60s
   setTimeout(() => {
     increaseTrendingNumber();
     setInterval(increaseTrendingNumber, 60000);
   }, 5000);
 
-  // Infinite smooth scrolling ticker
-  const wrapper = document.getElementById('trending-wrapper');
-  const text = trendingEl.textContent;
-  trendingEl.textContent = text + "   " + text; // duplicate for smooth loop
-  let pos = 0;
-  const speed = 0.55; // pixels per frame (~10% faster)
-
-  function animateTicker(){
-    pos -= speed;
-    if(Math.abs(pos) >= trendingEl.scrollWidth / 2){
-      pos = 0;
-    }
-    trendingEl.style.transform = `translateX(${pos}px)`;
-    requestAnimationFrame(animateTicker);
+  // Smooth scrolling ticker
+  let scrollPos = 0;
+  function smoothScroll(){
+    scrollPos -= 0.55; // 10% faster
+    trendingEl.style.transform = `translateX(${scrollPos}px)`;
+    if(Math.abs(scrollPos) > trendingEl.scrollWidth/2){ scrollPos = 0; }
+    requestAnimationFrame(smoothScroll);
   }
-  animateTicker();
+  smoothScroll();
 </script>
 
 </body>
