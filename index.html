@@ -81,16 +81,7 @@
       box-shadow: 0 6px 15px rgba(0,0,0,0.12);
     }
 
-    .cta-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 15px 0;
-    }
-
-    .whatsapp-button, .contact-button {
-      position: relative;
+    .whatsapp-button {
       background: #075E54;
       color: #fff;
       padding: 18px 35px;
@@ -100,17 +91,15 @@
       text-decoration: none;
       display: inline-block;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
-      will-change: transform;
+      margin: 20px 0;
     }
 
-    .contact-button { background: #1a73e8; }
-
-    .whatsapp-button:hover, .contact-button:hover {
+    .whatsapp-button:hover {
       transform: translateY(-2px) scale(1.03);
       box-shadow: 0 6px 15px rgba(0,0,0,0.2);
     }
 
-    .whatsapp-button:active, .contact-button:active {
+    .whatsapp-button:active {
       transform: translateY(1px) scale(0.97);
     }
 
@@ -190,10 +179,9 @@
     @media(max-width: 750px) {
       section.card, .testimonial { width: 90%; }
       h1 { font-size: 1.8rem; }
-      .whatsapp-button, .contact-button { font-size: 1rem; padding: 15px 25px; }
+      .whatsapp-button { font-size: 1rem; padding: 15px 25px; }
       .timer { font-size: 1.1rem; }
       .testimonial { text-align: center; }
-      .cta-buttons { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
@@ -203,19 +191,8 @@
     <h1>India Stock Market Academy</h1>
     <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkftGdJgzfU4aWcULVg7rn34jh64xnN-lQYFBZrycph4qWzikn3weRZ8hof8PIZeCCLCvFtvM6liRLIsP7jALcdGeUh-ckoLs0-4xvV80-JXXczWG8YYSKVqAUY7xQKv9c1hx4-F5b0qlscLdFpc-Z3R_j30Glw-C5XqI56wPt2r9Pn3h6x1zYj9AArA4vQjCTkq_6xrA7HvkZ3HjQcWvpB5cBq97NW7NWOvcHQ=w1280" alt="Stock Market Learning" class="title-image" loading="lazy">
     <p class="subheader">Join our free WhatsApp group to receive daily stock picks, live sessions, and guidance on Nifty, Bank Nifty, and Indian stocks. Only 0.01% fees per transaction for our service.</p>
+    <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" target="_blank">Join Our Group Chat</a>
   </header>
-
-  <section class="card">
-    <div class="cta-buttons">
-      <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" target="_blank">Join WhatsApp Group</a>
-      <a href="https://wa.me/YOURNUMBER" class="contact-button" target="_blank">Contact Us</a>
-    </div>
-    <div class="timer">
-      <span class="fire">🔥</span>
-      <span>Limited Time Offer: </span>
-      <span class="countdown">27:30</span>
-    </div>
-  </section>
 
   <section class="card">
     <h2>Why Join India Stock Market Academy?</h2>
@@ -226,6 +203,8 @@
     <p>• Market Trend Updates – Stay ahead in Nifty and Bank Nifty.</p>
     <p>💼 No upfront charges – only 0.01% per transaction for our service.</p>
   </section>
+
+  <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" target="_blank">Join Our Group Chat</a>
 
   <section class="testimonial-section">
     <h3>What Our Members Say 💬</h3>
@@ -254,7 +233,11 @@
 
   <script defer>
     // Countdown timer (minutes:seconds)
-    const countdownEl = document.querySelector('.countdown');
+    const countdownEl = document.createElement('div');
+    countdownEl.className = 'countdown';
+    countdownEl.textContent = '27:30';
+    document.querySelector('header').appendChild(countdownEl);
+
     let totalSeconds = 27 * 60 + 30;
 
     function updateCountdown() {
@@ -266,5 +249,6 @@
     }
     updateCountdown();
   </script>
+
 </body>
 </html>
