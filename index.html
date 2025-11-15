@@ -250,6 +250,22 @@ section.card:hover {
   .whatsapp-button{ width:auto; padding:12px 20px; } /* restore original look */
   .testimonial{text-align:center;}
 }
+  /* --- Make ALL cards follow the same width rules as the title image card --- */
+.card {
+  width: 100%;
+  max-width: 700px;   /* same width as header & main image area */
+  margin: 20px auto;  /* center them + spacing */
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+/* Mobile adjustments */
+@media(max-width: 750px) {
+  .card {
+    padding: 15px;
+    max-width: 100%;  /* full width on small screens */
+  }
+}
 </style>
 
 </head>
