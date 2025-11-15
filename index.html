@@ -50,7 +50,6 @@
       width:100%;
       max-width:700px;
       margin:10px auto 30px;
-      position: relative;
     }
     #trending {
       display:inline-block;
@@ -59,8 +58,7 @@
       font-size:1.2rem;
       font-style:italic;
       color:#1a73e8;
-      position:absolute;
-      will-change:transform;
+      padding-left:100%;
     }
 
     section.card {
@@ -150,11 +148,10 @@
 
   <!-- Trending Members -->
   <div id="trending-wrapper">
-    <div id="trending">🔥 Trending <span id="memberCount">90</span> members joining our WhatsApp group! Live session at 9:15 AM | Limited Seats!</div>
+    <div id="trending">🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now! 🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!</div>
   </div>
 </header>
 
-<!-- Rest of your page remains unchanged -->
 <section class="card">
   <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" id="joinBtnTop" aria-label="Join WhatsApp Group">Join WhatsApp Group</a>
   <div class="timer">
@@ -167,6 +164,7 @@
 <section class="card">
   <h2>Why Join Our Community?</h2>
   <p>We provide expert guidance to help you navigate the stock market with confidence.</p>
+  <p>• SEBI Registered – Our platform is officially registered and regulated, ensuring credibility and trust.</p>
   <p>• Daily Stock Picks – Receive 1–2 high-potential recommendations every day.</p>
   <p>• Free Technical Insights – Gain expert analysis with no upfront fees.</p>
   <p>• Personalized Stock Reviews – Tailored guidance for your unique portfolio.</p>
@@ -186,7 +184,7 @@
 
 <!-- FAQ Section -->
 <section class="faq-section">
-  <h2>Frequently Asked Questions</h2>
+  <h2>FAQ</h2>
   <article class="faq-card">
     <p class="faq-question">Is there any fee to join?</p>
     <div class="faq-answer">No, joining the group is completely free! After you make a profit from your trades, only a 0.01% transaction fee will be charged. Otherwise, learning and guidance in the group is totally free.</div>
@@ -307,30 +305,26 @@
     });
   });
 
-  // Smooth Trending Ticker
-  const trending = document.getElementById('trending');
-  const memberCountEl = document.getElementById('memberCount');
-  let count = 90;
-  let speed = 0.5; // px per frame
-  let x = trending.offsetWidth;
-
-  function animateTicker(){
-    x -= speed;
-    if(x < -trending.offsetWidth){
-      x = trending.offsetWidth;
-    }
-    trending.style.transform = `translateX(${x}px)`;
-    requestAnimationFrame(animateTicker);
+  // Trending ticker smooth scrolling with number increment
+  const trendingEl = document.getElementById('trending');
+  let trendingNumber = 90;
+  function updateTrending(){
+    trendingNumber += Math.random()*0.05; // small gradual increase
+    trendingEl.textContent = `🔥 Trending ${Math.floor(trendingNumber)} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now! 🔥 Trending ${Math.floor(trendingNumber)} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!`;
+    requestAnimationFrame(updateTrending);
   }
-  animateTicker();
+  updateTrending();
 
-  // Gradually increase member count
-  function increaseMembers(){
-    count += Math.random() < 0.5 ? 0 : 1; // small gradual increase
-    memberCountEl.textContent = count;
-    setTimeout(increaseMembers, 1500 + Math.random()*1500); // slow random interval
+  // Smooth scrolling
+  let scrollPos = 0;
+  function smoothScroll(){
+    scrollPos -= 0.5; // adjust speed
+    trendingEl.style.transform = `translateX(${scrollPos}px)`;
+    if(Math.abs(scrollPos) > trendingEl.scrollWidth/2){ scrollPos = 0; }
+    requestAnimationFrame(smoothScroll);
   }
-  increaseMembers();
+  smoothScroll();
+
 </script>
 
 </body>
