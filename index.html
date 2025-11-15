@@ -1,5 +1,11 @@
-<meta name="description" content="Join our free Indian Stock Market learning community on WhatsApp. Get daily stock picks, technical insights, portfolio guidance, and market trend updates.">
-<meta name="keywords" content="Indian stock market, stock trading tips, trading community, WhatsApp group, stock analysis, market updates">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Free Indian Stock Market Learning Community | WhatsApp Group</title>
+  <meta name="description" content="Join our free Indian Stock Market learning community on WhatsApp. Get daily stock picks, technical insights, portfolio guidance, and market trend updates.">
+  <meta name="keywords" content="Indian stock market, stock trading tips, trading community, WhatsApp group, stock analysis, market updates">
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="Free Indian Stock Market Learning Community | WhatsApp Group">
@@ -12,154 +18,231 @@
   <meta name="twitter:description" content="Join our free WhatsApp group for expert guidance, daily stock picks, and market insights.">
   <meta name="twitter:image" content="https://lh3.googleusercontent.com/sitesv/AAzXCkftGdJgzfU4aWcULVg7rn34jh64xnN-lQYFBZrycph4qWzikn3weRZ8hof8PIZeCCLCvFtvM6liRLIsP7jALcdGeUh-ckoLs0-4xvV80-JXXczWG8YYSKVqAUY7xQKv9c1hx4-F5b0qlscLdFpc-Z3R_j30Glw-C5XqI56wPt2r9Pn3h6x1zYj9AArA4vQjCTkq_6xrA7HvkZ3HjQcWvpB5cBq97NW7NWOvcHQ=w1280">
 
-<!-- Preload Google Fonts -->
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
-@@ -35,7 +24,7 @@
-}
-section.card:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
+  <!-- Google Fonts -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
 
-    /* Main WhatsApp Button with 3D + shine */
-    /* WhatsApp Button with 3D + shine */
-.whatsapp-button {
-position: relative;
-background: linear-gradient(to bottom, #075E54 0%, #04392c 100%);
-@@ -70,56 +59,29 @@
-transform: skewX(-20deg);
-animation: shine 6s linear infinite;
-}
+  <style>
+    body {
+      font-family:'Roboto',sans-serif; 
+      margin:0; padding:40px 20px; 
+      background:#f8f9fa; color:#333; 
+      display:flex; flex-direction:column; 
+      align-items:center; text-align:center; 
+      overflow-x:hidden;
+    }
+    h1 { color:#1a73e8; font-weight:800; font-size:2.2rem; margin-bottom:15px; line-height:1.3; }
+    h2 { color:#1a73e8; font-size:1.6rem; margin-bottom:15px; }
+    h3 { color:#1a73e8; font-size:1.8rem; margin-bottom:25px; }
+    .title-image { max-width:700px; width:100%; height:auto; border-radius:12px; margin-bottom:25px; display:block; margin-left:auto; margin-right:auto; }
+    .subheader { font-size:1.1rem; margin-bottom:30px; line-height:1.5; font-weight:bold; max-width:700px; margin:0 auto; }
+
+    section.card {
+      background:#fff; border-radius:12px; padding:25px 20px; margin:15px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); width:700px; max-width:90%; text-align:center; transition:transform 0.25s ease, box-shadow 0.25s ease;
+      margin-left:auto; margin-right:auto;
+    }
+    section.card:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
+
+    /* WhatsApp Button */
+    .whatsapp-button {
+      position: relative;
+      background: linear-gradient(to bottom, #075E54 0%, #04392c 100%);
+      color: #fff;
+      padding: 18px 35px;
+      font-size: 1.25rem;
+      border-radius: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-block;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      margin: 15px 0;
+      overflow: hidden;
+    }
+    .whatsapp-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 40%;
+      height: 100%;
+      background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.25) 50%, rgba(255,255,255,0) 100%);
+      transform: skewX(-20deg);
+      animation: shine 6s linear infinite;
+    }
     @keyframes shine { 0% { left: -75%; } 100% { left: 125%; } }
-
-    @keyframes shine {
-      0% { left: -75%; }
-      100% { left: 125%; }
-    }
-
-    /* Hover and active states for 3D effect */
-    .whatsapp-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.35);
-    }
-    .whatsapp-button:active {
-      transform: translateY(1px);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
     .whatsapp-button:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.35); }
     .whatsapp-button:active { transform: translateY(1px); box-shadow: 0 2px 6px rgba(0,0,0,0.3); }
 
-.timer { margin-top:15px; font-size:1.2rem; font-weight:bold; display:flex; justify-content:center; align-items:center; gap:5px; }
-.fire { display:inline-block; will-change:transform, text-shadow; animation:fireFlicker 0.8s infinite; }
-@keyframes fireFlicker { 0% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9c00,0 0 5px #ff6600;} 50% {transform:scale(1.05) rotate(-2deg); text-shadow:0 0 3px #ffb84d,0 0 6px #ff9933;} 100% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9933,0 0 5px #ff6600;} }
+    .timer { margin-top:15px; font-size:1.2rem; font-weight:bold; display:flex; justify-content:center; align-items:center; gap:5px; }
+    .fire { display:inline-block; will-change:transform, text-shadow; animation:fireFlicker 0.8s infinite; }
+    @keyframes fireFlicker { 0% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9c00,0 0 5px #ff6600;} 50% {transform:scale(1.05) rotate(-2deg); text-shadow:0 0 3px #ffb84d,0 0 6px #ff9933;} 100% {transform:scale(1) rotate(0deg); text-shadow:0 0 2px #ff9933,0 0 5px #ff6600;} }
 
     .text-normal{ font-weight:bold; color:#333; }
     .countdown{ color:#c00; font-weight:bold; }
 
-.testimonial-section{ margin-top:50px; max-width:700px; text-align:center; }
-.testimonial-section h3{ font-size:1.8rem; color:#222; margin-bottom:25px; }
+    /* FAQ Section */
+    .faq-section{ max-width:700px; width:90%; margin:40px auto; text-align:left; }
+    .faq-section h3{ text-align:center; color:#1a73e8; }
+    .faq { background:#fff; border-radius:12px; padding:18px 20px; margin:10px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; transition:transform 0.25s ease, box-shadow 0.25s ease; }
+    .faq:hover { transform:translateY(-2px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
+    .faq-question{ font-weight:700; margin-bottom:5px; }
+    .faq-answer{ display:none; font-weight:400; margin-top:5px; line-height:1.5; }
+    
+    /* Testimonials */
+    .testimonial-section{ margin-top:50px; max-width:700px; text-align:center; }
+    .testimonial-section h3{ font-size:1.8rem; color:#222; margin-bottom:25px; }
+    .testimonial { background:#fff; padding:18px 22px; margin:15px auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-style:italic; font-weight:400; text-align:left; width:700px; max-width:90%; transition:transform 0.25s ease, box-shadow 0.25s ease; }
+    .testimonial:hover{ transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
+    .testimonial-author{ margin-top:8px; font-size:0.95rem; font-weight:700; color:#008000; display:flex; align-items:center; gap:8px; }
+    .blur-lastname{ filter: blur(2px); }
+    .stars{ font-size:1.2rem; color:#FFD700; letter-spacing:1px; margin-bottom:8px; }
+    .social-icon{ width:18px; height:18px; }
 
-.testimonial { background:#fff; padding:18px 22px; margin:15px auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-style:italic; font-weight:400; text-align:left; width:700px; max-width:90%; transition:transform 0.25s ease, box-shadow 0.25s ease; }
-.testimonial:hover{ transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
-    .testimonial-author {
-      margin-top: 8px;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #008000;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .social-icon { width: 20px; height: 20px; }
-    .testimonial-author{ margin-top:8px; font-size:0.95rem; font-weight:700; color:#008000; display:flex; align-items:center; gap:5px; }
-    .blur-lastname { filter: blur(3px); display:inline-block; }
-.stars{ font-size:1.2rem; color:#FFD700; letter-spacing:1px; margin-bottom:8px; }
+    .footer{ margin-top:40px; font-size:0.85rem; color:#666; text-align:center; max-width:700px; }
 
-.footer{ margin-top:40px; font-size:0.85rem; color:#666; text-align:center; max-width:700px; }
-
-    @media(max-width:750px){
-      section.card, .testimonial{ width:90%; }
-      h1{ font-size:1.8rem; }
-      .whatsapp-button{ font-size:1rem; padding:15px 25px; }
-      .timer{ font-size:1.1rem; }
-      .testimonial{text-align:center;}
-      .testimonial-author{justify-content:center;}
-    }
-    .social-icon { width:18px; height:18px; vertical-align:middle; }
-
-    @media(max-width:750px){ section.card, .testimonial{ width:90%; } h1{ font-size:1.8rem; } .whatsapp-button{ font-size:1rem; padding:15px 25px; } .timer{ font-size:1.1rem; } .testimonial{text-align:center; flex-direction:column; gap:3px;} }
-</style>
+    @media(max-width:750px){ section.card, .testimonial, .faq-section{ width:90%; } h1{ font-size:1.8rem; } .whatsapp-button{ font-size:1rem; padding:15px 25px; } .timer{ font-size:1.1rem; } .testimonial{text-align:center;} }
+  </style>
 </head>
 <body>
-@@ -159,57 +121,45 @@ <h2>Why Join Our Community?</h2>
-</div>
-</section>
 
-  <!-- Updated Testimonials -->
-<section class="testimonial-section">
-<h3>What Our Members Say 💬</h3>
+  <header>
+    <h1>Welcome to India Stock Market Academy</h1>
+    <img src="https://lh3.googleusercontent.com/sitesv/AAzXCkdrL5063XTiePpIO4-PHflhsPa0y4K-BgM4cOo7G7Nls_VGUsn-D_0SDpGmJn8lPv45lWgzHBBp4tzgLEqHFmvN-EZjjD0KswxOFxHilcXfw9aUlm0JVKJ20m5Pe2NXOsOwT1PPFUAeB-453alcemUsp7SRiFk0Cy4e1bYWCUpZfkFnCTycZXLIrttfOed2o2re3Y8wWfuEY0AAfIp0GDaXiVnidALOVhXL_aI=w1280" width="700" height="400" alt="Stock Market Learning" class="title-image" loading="lazy">
+    <p class="subheader">Get real trading insights, risk management lessons, market updates, and practical tips daily. No fees, no paid courses — just genuine learning from experienced traders.</p>
+  </header>
 
-<article class="testimonial">
-<div class="stars">★★★★★</div>
-      “I joined this group to learn stock trading, and the tips are super helpful!”
-      <div class="testimonial-author">
-        <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" class="social-icon"> Rakesh Mehta
-      </div>
-      “I joined this group to learn about stock trading, and I’m amazed by the clarity of explanations. The mentors are very supportive!”
-      <div class="testimonial-author"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" class="social-icon"> Rakesh <span class="blur-lastname">Mehta</span></div>
-</article>
+  <section class="card">
+    <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" id="joinBtnTop" aria-label="Join WhatsApp Group">Join WhatsApp Group</a>
+    <div class="timer">
+      <span class="fire">🔥</span>
+      <span class="text-normal">Limited Time Offer:</span>
+      <span class="countdown" aria-live="polite">27:30</span>
+    </div>
+  </section>
 
-<article class="testimonial">
-<div class="stars">★★★★☆</div>
-      “Great insights daily, and I feel more confident managing my investments.”
-      <div class="testimonial-author">
-        <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram" class="social-icon"> Priya Sharma
-      </div>
-      “The community is helpful, and I’ve already learned so many new things about trading.”
-      <div class="testimonial-author"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram" class="social-icon"> Priya <span class="blur-lastname">Sharma</span></div>
-</article>
+  <section class="card">
+    <h2>Why Join Our Community?</h2>
+    <p>We provide expert guidance to help you navigate the stock market with confidence.</p>
+    <p>• Daily Stock Picks – Receive 1–2 high-potential recommendations every day.</p>
+    <p>• Free Technical Insights – Gain expert analysis with no upfront fees.</p>
+    <p>• Personalized Stock Reviews – Tailored guidance for your unique portfolio.</p>
+    <p>• Market Trend Updates – Stay informed on market direction daily.</p>
+    <p>💼 No upfront charges – We only charge 0.01% per transaction.</p>
+    <p>📈 Grow your investments smartly, steadily, and safely.</p>
+  </section>
 
-<article class="testimonial">
-<div class="stars">★★★★★</div>
-      “The team explains complex topics in simple ways. Highly recommended!”
-      <div class="testimonial-author">
-        <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp" class="social-icon"> Arjun Patel
-      </div>
-      “Thanks to the team, I’ve started understanding market trends and managing my investments better.”
-      <div class="testimonial-author"><img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WhatsApp" class="social-icon"> Arjun <span class="blur-lastname">Patel</span></div>
-</article>
+  <section class="card">
+    <a href="https://chat.whatsapp.com/KFuHc985HtcDJNMJPJ5SFU" class="whatsapp-button" id="joinBtnBottom" aria-label="Join WhatsApp Group">Join WhatsApp Group</a>
+    <div class="timer">
+      <span class="fire">🔥</span>
+      <span class="text-normal">Limited Time Offer:</span>
+      <span class="countdown" aria-live="polite">27:30</span>
+    </div>
+  </section>
 
-<article class="testimonial">
-      <div class="stars">★★★★☆</div>
-      “I’ve learned more in 1 week here than I did in months elsewhere.”
-      <div class="testimonial-author">
-        <img src="https://cdn-icons-png.flaticon.com/24/281/281769.png" alt="Gmail" class="social-icon"> Ananya Singh
-      </div>
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <h3>Frequently Asked Questions</h3>
+    <div class="faq">
+      <div class="faq-question">Q1: Is this group really free?</div>
+      <div class="faq-answer">Yes! There are no hidden fees. You only pay 0.01% per transaction if you act on stock recommendations.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-question">Q2: Can beginners join?</div>
+      <div class="faq-answer">Absolutely! The group is beginner-friendly and provides step-by-step guidance.</div>
+    </div>
+    <div class="faq">
+      <div class="faq-question">Q3: How often are stock tips shared?</div>
+      <div class="faq-answer">We provide 1–2 high-potential stock recommendations daily.</div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonial-section">
+    <h3>What Our Members Say 💬</h3>
+
+    <article class="testimonial">
       <div class="stars">★★★★★</div>
-      “Learning here has been so simple and practical. Highly recommend this group!”
-      <div class="testimonial-author"><img src="https://cdn-icons-png.flaticon.com/24/281/281769.png" alt="Gmail" class="social-icon"> Sneha <span class="blur-lastname">Gupta</span></div>
-</article>
-
-<article class="testimonial">
-      <div class="stars">★★★★★</div>
-      “Excellent community! The guidance is practical and actionable.”
+      “The mentors are very supportive and explain everything clearly. My confidence in trading has skyrocketed!”
       <div class="testimonial-author">
-        <img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" class="social-icon"> Vikram Kumar
+        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> Rakesh <span class="blur-lastname">Mehta</span>
       </div>
-      <div class="stars">★★★★☆</div>
-      “The stock picks are valuable and really help me make better decisions.”
-      <div class="testimonial-author"><img src="https://cdn-icons-png.flaticon.com/24/733/733547.png" alt="Facebook" class="social-icon"> Karan <span class="blur-lastname">Singh</span></div>
-</article>
+    </article>
 
-<article class="testimonial">
+    <article class="testimonial">
       <div class="stars">★★★★☆</div>
-      “Daily stock picks and insights really help me make smarter trades.”
+      “I’ve learned so many new things in trading. The group is genuinely helpful and informative.”
       <div class="testimonial-author">
-        <img src="https://cdn-icons-png.flaticon.com/24/2111/2111463.png" alt="Instagram" class="social-icon"> Meera Joshi
+        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Priya <span class="blur-lastname">Sharma</span>
       </div>
+    </article>
+
+    <article class="testimonial">
       <div class="stars">★★★★★</div>
-      “I feel more confident about investing thanks to the insights shared here.”
-      <div class="testimonial-author"><img src="https://cdn-icons-png.flaticon.com/24/733/733558.png" alt="Instagram" class="social-icon"> Anjali <span class="blur-lastname">Verma</span></div>
-</article>
+      “Understanding market trends and managing my portfolio has never been easier. Highly recommended!”
+      <div class="testimonial-author">
+        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"> Arjun <span class="blur-lastname">Patel</span>
+      </div>
+    </article>
 
-</section>
+    <article class="testimonial">
+      <div class="stars">★★★★☆</div>
+      “The daily tips are insightful and easy to follow. Great support from experienced traders.”
+      <div class="testimonial-author">
+        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Gmail"> Sneha <span class="blur-lastname">Gupta</span>
+      </div>
+    </article>
 
-<footer class="footer">
+    <article class="testimonial">
+      <div class="stars">★★★★★</div>
+      “I was a complete beginner, now I can confidently analyze stocks. Excellent community!”
+      <div class="testimonial-author">
+        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"> Aman <span class="blur-lastname">Khan</span>
+      </div>
+    </article>
+
+    <article class="testimonial">
+      <div class="stars">★★★★☆</div>
+      “Practical tips and market updates are very useful. The group keeps me on track.”
+      <div class="testimonial-author">
+        <img class="social-icon" src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"> Neha <span class="blur-lastname">Joshi</span>
+      </div>
+    </article>
+
+  </section>
+
+  <footer class="footer">
+    © 2025 India Stock Market Academy. All rights reserved.
+  </footer>
+
+  <script defer>
+    // Countdown timer in MM:SS
+    const countdownElements=document.querySelectorAll('.countdown');
+    let totalSeconds=27*60+30;
+    function updateCountdown(){
+      const minutes=Math.floor(totalSeconds/60);
+      const seconds=totalSeconds%60;
+      countdownElements.forEach(el=>el.textContent=`${String(minutes).padStart(2,'0')}:${String(seconds).padStart(2,'0')}`);
+      if(totalSeconds>0){ totalSeconds--; setTimeout(updateCountdown,1000); }
+    }
+    updateCountdown();
+
+    // Event tracking
+    const joinTop=document.getElementById('joinBtnTop');
+    const joinBottom=document.getElementById('joinBtnBottom');
+    joinTop.addEventListener('click',()=>{fbq('trackCustom','TopWhatsAppJoinClick');});
+    joinBottom.addEventListener('click',()=>{fbq('trackCustom','BottomWhatsAppJoinClick');});
+
+    // FAQ toggle
+    const faqs=document.querySelectorAll('.faq');
+    faqs.forEach(faq=>{
+      faq.addEventListener('click',()=> {
+        const answer=faq.querySelector('.faq-answer');
+        answer.style.display = answer.style.display==='block' ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
