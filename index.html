@@ -165,6 +165,35 @@
       .whatsapp-button{ width:100%; padding:12px 0; }
       .testimonial{text-align:center;}
     }
+    /* --- Add this at the end of your CSS --- */
+header {
+  width: 100%;
+  max-width: 700px;
+  padding: 0 20px; /* ensure some padding inside on mobile */
+  box-sizing: border-box; /* important for padding not to overflow */
+  margin: 0 auto; /* center the header content */
+}
+
+h1, .subheader, .title-image {
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+@media(max-width:750px){
+  h1 {
+    font-size: 1.8rem;
+    word-break: break-word; /* prevent long text from overflowing */
+  }
+  .subheader {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  .title-image {
+    width: 100%;
+    height: auto;
+  }
+}
   </style>
 </head>
 <body>
