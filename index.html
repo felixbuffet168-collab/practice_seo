@@ -50,6 +50,7 @@
       width:100%;
       max-width:700px;
       margin:10px auto 30px;
+      position: relative;
     }
     #trending {
       display:inline-block;
@@ -58,7 +59,9 @@
       font-size:1.2rem;
       font-style:italic;
       color:#1a73e8;
-      padding-left:100%;
+      position: absolute;
+      left: 0;
+      top: 0;
     }
 
     section.card {
@@ -148,7 +151,7 @@
 
   <!-- Trending Members -->
   <div id="trending-wrapper">
-    <div id="trending">🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now! 🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!</div>
+    <div id="trending">🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending 90 members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now!</div>
   </div>
 </header>
 
@@ -242,7 +245,7 @@
   <article class="testimonial">
     <div class="stars">★★★★☆</div>
     “I was hesitant at first, but this group made learning the stock market simple and enjoyable.”
-    <div class="testimonial-author">
+        <div class="testimonial-author">
       <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail" class="social-logo" loading="lazy"> – Sneha R.
     </div>
   </article>
@@ -311,7 +314,7 @@
 
   function increaseTrendingNumber() {
     trendingNumber += Math.floor(Math.random() * 3) + 1; // +1 to 3 members
-    trendingEl.textContent = `🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!`;
+    trendingEl.textContent = `🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending ${trendingNumber} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now!`;
   }
 
   // First after 5s, then every 60s
@@ -320,15 +323,22 @@
     setInterval(increaseTrendingNumber, 60000);
   }, 5000);
 
-  // Smooth scrolling
-  let scrollPos = 0;
-  function smoothScroll(){
-    scrollPos -= 0.55; // 10% faster
-    trendingEl.style.transform = `translateX(${scrollPos}px)`;
-    if(Math.abs(scrollPos) > trendingEl.scrollWidth/2){ scrollPos = 0; }
-    requestAnimationFrame(smoothScroll);
+  // Infinite smooth scrolling ticker
+  const wrapper = document.getElementById('trending-wrapper');
+  const text = trendingEl.textContent;
+  trendingEl.textContent = text + "   " + text; // duplicate for smooth loop
+  let pos = 0;
+  const speed = 0.55; // pixels per frame (~10% faster)
+
+  function animateTicker(){
+    pos -= speed;
+    if(Math.abs(pos) >= trendingEl.scrollWidth / 2){
+      pos = 0;
+    }
+    trendingEl.style.transform = `translateX(${pos}px)`;
+    requestAnimationFrame(animateTicker);
   }
-  smoothScroll();
+  animateTicker();
 </script>
 
 </body>
