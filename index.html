@@ -59,11 +59,6 @@
       font-style:italic;
       color:#1a73e8;
       padding-left:100%;
-      animation: trendingScroll 18s linear infinite;
-    }
-    @keyframes trendingScroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
     }
 
     section.card {
@@ -308,6 +303,44 @@
       }
     });
   });
+
+  // --- Trending ticker: seamless scrolling & smooth member increase ---
+  (function(){
+    const trendingEl = document.getElementById('trending');
+    let members = 90; // starting number
+
+    // Duplicate content for seamless scrolling
+    trendingEl.innerHTML = trendingEl.innerHTML + " " + trendingEl.innerHTML;
+
+    let offset = 0;
+    const speed = 1.2; // px per frame
+    function scrollTicker(){
+      offset -= speed;
+      if(Math.abs(offset) >= trendingEl.scrollWidth/2) offset = 0;
+      trendingEl.style.transform = `translateX(${offset}px)`;
+      requestAnimationFrame(scrollTicker);
+    }
+    scrollTicker();
+
+    // Update member count in text
+    function updateMembersText() {
+      trendingEl.innerHTML = trendingEl.innerHTML.replace(/\d+ members/, `${members} members`);
+      // Ensure duplication for seamless scroll
+      trendingEl.innerHTML = trendingEl.innerHTML + " " + trendingEl.innerHTML.split(" ").slice(trendingEl.innerHTML.split(" ").length/2).join(" ");
+    }
+
+    // Smooth incremental growth
+    function incrementMembers() {
+      const increment = Math.floor(Math.random()*2)+1; // 1 or 2 members per update
+      members += increment;
+      updateMembersText();
+      const interval = 500 + Math.random()*1000; // vary interval 0.5-1.5s for natural feel
+      setTimeout(incrementMembers, interval);
+    }
+
+    updateMembersText();
+    setTimeout(incrementMembers, 800);
+  })();
 </script>
 
 </body>
