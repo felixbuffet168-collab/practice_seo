@@ -66,32 +66,11 @@
 
     .subheader {
       font-size:1.1rem;
-      margin-bottom:30px;
+      margin-bottom:10px;
       line-height:1.5;
       font-weight:bold;
       max-width:700px;
-      margin:0 auto;
-    }
-
-    /* Trending ticker */
-    #trending-wrapper {
-      width: 100%;
-      max-width: 700px;
-      overflow: hidden;
-      margin: 10px auto 30px;
-    }
-
-    #trending {
-      display: inline-block;
-      white-space: nowrap;
-      font-weight: bold;
-      font-size: 1.2rem;
-      animation: scroll-left 15s linear infinite;
-    }
-
-    @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      margin:0 auto 15px auto;
     }
 
     section.card {
@@ -113,7 +92,6 @@
       box-shadow:0 6px 15px rgba(0,0,0,0.12);
     }
 
-    /* WhatsApp Button 3D + shine */
     .whatsapp-button {
       position: relative;
       background: linear-gradient(to bottom, #075E54 0%, #04392c 100%);
@@ -188,86 +166,18 @@
     .text-normal{ font-weight:bold; color:#333; }
     .countdown{ color:#c00; font-weight:bold; }
 
-    /* FAQ Section */
-    .faq-section {
-      margin-top:30px;
-      margin-bottom:20px;
-      width:700px;
-      max-width:90%;
-      text-align:center;
-    }
+    .faq-section { margin-top:30px; margin-bottom:20px; width:700px; max-width:90%; text-align:center; }
+    .faq-card { background:#fff; border-radius:12px; padding:18px 20px; margin:8px 0; box-shadow:0 4px 12px rgba(0,0,0,0.1); cursor:pointer; text-align:center; transition:all 0.3s ease; }
+    .faq-question { font-weight:700; color:#1a73e8; margin:0; }
+    .faq-answer { margin-top:10px; display:none; text-align:center; font-weight:500; transition: all 0.3s ease; }
 
-    .faq-card {
-      background:#fff;
-      border-radius:12px;
-      padding:18px 20px;
-      margin:8px 0;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-      cursor:pointer;
-      text-align:center;
-      transition:all 0.3s ease;
-    }
-
-    .faq-question {
-      font-weight:700;
-      color:#1a73e8;
-      margin:0;
-    }
-
-    .faq-answer {
-      margin-top:10px;
-      display:none;
-      text-align:center;
-      font-weight:500;
-      transition: all 0.3s ease;
-    }
-
-    /* Testimonial Section */
-    .testimonial-section {
-      margin-top:20px;
-      max-width:700px;
-      text-align:center;
-    }
-
+    .testimonial-section { margin-top:20px; max-width:700px; text-align:center; }
     .testimonial-section h3{ font-size:1.8rem; color:#222; margin-bottom:20px; }
-
-    .testimonial {
-      background:#fff;
-      padding:18px 22px;
-      margin:12px auto;
-      border-radius:12px;
-      box-shadow:0 4px 12px rgba(0,0,0,0.1);
-      font-style:italic;
-      font-weight:400;
-      text-align:left;
-      width:700px;
-      max-width:90%;
-      transition:transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .testimonial:hover {
-      transform:translateY(-3px);
-      box-shadow:0 6px 15px rgba(0,0,0,0.12);
-    }
-
-    .testimonial-author {
-      margin-top:8px;
-      font-size:0.95rem;
-      font-weight:700;
-      color:#008000;
-      display:flex;
-      align-items:center;
-      gap:6px;
-    }
-
+    .testimonial { background:#fff; padding:18px 22px; margin:12px auto; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1); font-style:italic; font-weight:400; text-align:left; width:700px; max-width:90%; transition:transform 0.25s ease, box-shadow 0.25s ease; }
+    .testimonial:hover { transform:translateY(-3px); box-shadow:0 6px 15px rgba(0,0,0,0.12); }
+    .testimonial-author { margin-top:8px; font-size:0.95rem; font-weight:700; color:#008000; display:flex; align-items:center; gap:6px; }
     .stars{ font-size:1.2rem; color:#FFD700; letter-spacing:1px; margin-bottom:8px; }
-
-    .social-logo {
-      width:20px;
-      height:20px;
-      vertical-align:middle;
-      margin-right:6px;
-    }
+    .social-logo { width:20px; height:20px; vertical-align:middle; margin-right:6px; }
 
     .footer{ margin-top:40px; font-size:0.85rem; color:#666; text-align:center; max-width:700px; }
 
@@ -277,6 +187,28 @@
       .whatsapp-button{ font-size:1rem; padding:15px 25px; } 
       .timer{ font-size:1.1rem; } 
       .testimonial{text-align:center;} 
+    }
+
+    /* Trending ticker */
+    #trending-wrapper {
+      width: 100%;
+      max-width: 700px;
+      overflow: hidden;
+      margin: 10px auto 30px;
+    }
+
+    #trending {
+      display: inline-block;
+      white-space: nowrap;
+      font-weight: bold;
+      font-size: 1.2rem;
+      font-style: italic;
+      animation: scroll-left 15s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
 </head>
@@ -289,7 +221,9 @@
 
   <!-- Trending Members Ticker -->
   <div id="trending-wrapper">
-    <div id="trending">🔥 Trending: 90 members joining our WhatsApp group!</div>
+    <p id="trending">
+      🔥 Trending: 90 members joining our WhatsApp group! 🔥 Trending: 90 members joining our WhatsApp group! 🔥 Trending: 90 members joining our WhatsApp group!
+    </p>
   </div>
 </header>
 
@@ -325,32 +259,26 @@
 <!-- FAQ Section -->
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
-
   <article class="faq-card">
     <p class="faq-question">What will I learn in this group?</p>
     <div class="faq-answer">You'll learn how to reduce risk in stock trading, stay updated on stock news, portfolio guidance, market trend updates and daily premium stock picks.</div>
   </article>
-
   <article class="faq-card">
     <p class="faq-question">Is there any fee to join?</p>
     <div class="faq-answer">No, joining the group is completely free! After you make a profit from your trades, only a 0.01% transaction fee will be charged. Otherwise, learning and guidance in the group is totally free.</div>
   </article>
-
   <article class="faq-card">
     <p class="faq-question">Who can join this group?</p>
     <div class="faq-answer">Anyone interested in learning about the Indian stock market, from beginners to experienced traders. No prior experience is required.</div>
   </article>
-
   <article class="faq-card">
     <p class="faq-question">Can I ask questions in the group?</p>
     <div class="faq-answer">Absolutely! Members are encouraged to ask questions. Our mentor Mr. Navneet Arora and group coordinator are always ready to guide you.</div>
   </article>
-
   <article class="faq-card">
     <p class="faq-question">When does the live session start?</p>
     <div class="faq-answer">Live session starts at 9:15 AM (IST) every Monday to Friday.</div>
   </article>
-
   <article class="faq-card">
     <p class="faq-question">Must I be active everyday in the group chat?</p>
     <div class="faq-answer">No! You can join and stay active at your available time, and you can review the conversation later.</div>
@@ -439,7 +367,7 @@
       if(answer.style.display === 'block'){
         answer.style.height = answer.scrollHeight + 'px';
         requestAnimationFrame(()=>{ answer.style.height = '0px'; });
-        setTimeout(()=>{ answer.style.display = 'none'; answer.style.height='auto'; },300);
+        setTimeout(()=>{ answer.style.display='none'; answer.style.height='auto'; },300);
       } else {
         answer.style.display = 'block';
         const height = answer.scrollHeight;
@@ -458,7 +386,8 @@
     if(members < 90) members = 90;
 
     function updateDisplay() {
-      trendingEl.textContent = `🔥 Trending: ${members} members joining our WhatsApp group!`;
+      const text = `🔥 Trending: ${members} members joining our WhatsApp group! `;
+      trendingEl.textContent = text + text + text;
     }
 
     function incrementMembers() {
