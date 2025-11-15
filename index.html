@@ -305,15 +305,22 @@
     });
   });
 
-  // Trending ticker smooth scrolling with number increment
+  // Trending ticker realistic random increment
   const trendingEl = document.getElementById('trending');
   let trendingNumber = 90;
-  function updateTrending(){
-    trendingNumber += Math.random()*0.05; // small gradual increase
-    trendingEl.textContent = `🔥 Trending ${Math.floor(trendingNumber)} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now! 🔥 Trending ${Math.floor(trendingNumber)} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!`;
-    requestAnimationFrame(updateTrending);
+
+  function updateTrendingRandomly(){
+    // 50% chance to increase
+    if(Math.random() < 0.5){
+      trendingNumber += Math.floor(Math.random()*3); // 0,1,2 members
+    }
+
+    trendingEl.textContent = `🔥 Trending ${Math.floor(trendingNumber)} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats—Secure Yours Now! 🔥 Trending ${Math.floor(trendingNumber)} members are joining our WhatsApp group chat now | Live session starts at 9:15 AM from Monday - Friday | Limited Seats--Secure Yours Now!`;
+
+    // Next update in random interval between 1s to 60s
+    setTimeout(updateTrendingRandomly, Math.random()*59000 + 1000);
   }
-  updateTrending();
+  updateTrendingRandomly();
 
   // Smooth scrolling
   let scrollPos = 0;
