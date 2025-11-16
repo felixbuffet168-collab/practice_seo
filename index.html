@@ -457,15 +457,35 @@ h1, .subheader, .title-image {
     }
   ]
 }
-</script>
-  <!-- Google tag (gtag.js) -->
+<!-- Your GA4 tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQDS0THHK"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-1CQDS0THHK');
+</script>
+
+<!-- WhatsApp button conversion tracking -->
+<script>
+  const joinTop = document.getElementById('joinBtnTop');
+  const joinBottom = document.getElementById('joinBtnBottom');
+
+  joinTop.addEventListener('click', () => {
+    gtag('event', 'conversion', {
+      send_to: 'AW-17732881118/2cdcCLKXg8EbEN6V2YdC',
+      event_category: 'WhatsApp',
+      event_label: 'Top Button'
+    });
+  });
+
+  joinBottom.addEventListener('click', () => {
+    gtag('event', 'conversion', {
+      send_to: 'AW-17732881118/2cdcCLKXg8EbEN6V2YdC',
+      event_category: 'WhatsApp',
+      event_label: 'Bottom Button'
+    });
+  });
 </script>
   
 </body>
