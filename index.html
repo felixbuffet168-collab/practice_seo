@@ -402,7 +402,7 @@ h1, .subheader, .title-image {
   smoothScroll();
 </script>
 
-  <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -457,6 +457,8 @@ h1, .subheader, .title-image {
     }
   ]
 }
+</script>
+
 <!-- Your GA4 tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-1CQDS0THHK"></script>
 <script>
@@ -464,13 +466,8 @@ h1, .subheader, .title-image {
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-1CQDS0THHK');
-</script>
 
-<!-- WhatsApp button conversion tracking -->
-<script>
-  const joinTop = document.getElementById('joinBtnTop');
-  const joinBottom = document.getElementById('joinBtnBottom');
-
+  // WhatsApp button conversion tracking – reuse existing joinTop/joinBottom
   joinTop.addEventListener('click', () => {
     gtag('event', 'conversion', {
       send_to: 'AW-17732881118/2cdcCLKXg8EbEN6V2YdC',
@@ -487,6 +484,6 @@ h1, .subheader, .title-image {
     });
   });
 </script>
-  
+
 </body>
 </html>
